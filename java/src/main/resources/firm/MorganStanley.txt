@@ -1,0 +1,22 @@
+Decorator Design Pattern
+    why not list based approach
+What other patterns you know
+Use case for other design patterns
+
+Current Project Architecture
+Design a system so that all other clients get the latest value from server
+
+Immutability Advantages
+Why synchronization
+Volatile vs synchronization
+How is AtomicInteger implemented
+
+Where does caching occurs for Non volatile values
+
+How push based approach works
+    is it observer pattern
+
+Disadvantages of Immutable classes
+
+Unsigned in java
+Balanced Trees

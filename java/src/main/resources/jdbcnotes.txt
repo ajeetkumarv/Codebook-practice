@@ -1,0 +1,8 @@
+Different JDBC Driver
+    JDBC-ODBC Bridge Driver (Dev and testing purpose)
+    JDBC-Native API (Faster since eliminates ODBC's overhead)
+    JDBC-NET Pure Java
+    Pura Java:
+        Highest Performance driver
+        Provided by vendor itself
+        Extremely Flexible

@@ -1,0 +1,5 @@
+GC and Heap Memory
+Java memory model
+
+What is shaded jar/pom
+Covariance and Contravariance
