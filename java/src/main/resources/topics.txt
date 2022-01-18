@@ -3,3 +3,6 @@ Java memory model
 
 What is shaded jar/pom
 Covariance and Contravariance
+
+What is compact and profile in java
+

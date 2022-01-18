@@ -71,3 +71,26 @@ Non-reifiable types are types where information has been removed at compile-time
 Heap Pollution (More on above link)
     Heap pollution occurs when a variable of a parameterized type refers to an object that is not of that parameterized type.
     This situation occurs if the program performed some operation that gives rise to an unchecked warning at compile-time.
+
+Defensive copy
+    is a technique to mitigate -ve effects of unintensional modifications of shared objects.
+
+Immutability Advantages
+    Simple to create, test, and use
+    Automatically thread safe and have no synchronization issues
+    Allow hashCode cache
+    don't need to be defensively copied
+    Don't need a copy constructor
+
+Joshua Bloch
+    Classes should be immutable unless there is a good reason to make them mutable. if not possible, limit their ability to mutate
+
+Aggregation vs Composition
+    Types can exist without car
+    Room can't be without house (walls)
+
+    Composition is strong association
+    Aggregation is weak association
+
+    Composition is part-of
+    Aggregation is has-a
