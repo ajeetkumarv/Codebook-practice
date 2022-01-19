@@ -139,4 +139,8 @@ Default garbage collectors:
 
 jagged arrays
 
+Before JDK 7, the pool was part of permgen space, and from JDK 7 to now, it is part of the main heap memory.
 
+Thread is a worker, Runnable is the Job
+Thread class itself implements Runnable
+Once the thread is started, it can’t be started again.
