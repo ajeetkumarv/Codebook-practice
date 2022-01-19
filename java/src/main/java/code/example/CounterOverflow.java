@@ -6,6 +6,8 @@ public class CounterOverflow {
 
     public synchronized int getCount() {
 
+        Enum e ;
+
         /*
             this way it will stop at max value
             and won't start with -ve values

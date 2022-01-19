@@ -1,0 +1,27 @@
+Disadvantages
+    Increased network calls
+    single latency microservice may impact overall system
+    more moving parts in the system overall decreases reliability
+    System can be partially up or down, is this okay?
+Advantages
+    lighter deployments
+    fewer test scenarios
+    programming lang/tools independence
+
+Making the correct compromises in imp for success.
+
+The cost associated with remote calls for most operations
+in microservices architectures is often called the Distribution Tax
+
+12-factor application?
+
+It's not about size of the service, it's the operations of service that
+should be thought about microservice.
+
+Lets say search is down, but you can still watch movies.
+balance between too granular or not granular enough is imp
+
+The communication dance in microservices is primarily
+ an effect of the ability of a service to call any other service
+
+

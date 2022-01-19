@@ -94,3 +94,49 @@ Aggregation vs Composition
 
     Composition is part-of
     Aggregation is has-a
+
+Lambda expression vs Annonymous class
+    Ann class is for class declaration and Lambda is for method body
+    Ann class generates an extra class wit $ and lambda uses invoke dynamics
+    Ann class this represents ann class, this inside lambda refers to class
+    Ann class can be used for > 1 abstract method, lambda only for SAM
+
+Invoke Dynamics (Since 7)
+    It is a new JVM instruction (opcode) which allows a compiler to generate code which calls
+    methods with a looser specification than was previously possible --
+    if you know what "duck typing" is, invokedynamic basically allows for duck typing.
+    There's not too much you as a Java programmer can do with it; if you're a tool creator,
+    though, you can use it to build more flexible, more efficient JVM-based languages.
+
+    Before Java 7, the JVM only had four method invocation types:
+    invokevirtual to call normal class methods,
+    invokestatic to call static methods,
+    invokeinterface to call interface methods, and
+    invokespecial to call constructors or private methods.
+
+-XX:+UseStringDeduplication
+    StringDeduplicationAgeThreshold JVM setting default value 3
+    -XX:+CompactStrings since java 9 on by default
+    https://stackoverflow.com/questions/42080648/why-when-you-would-not-want-to-have-java-8-usestringdeduplication-enabled-in-jvm
+
+https://stackoverflow.com/questions/586363/why-is-super-super-method-not-allowed-in-java?rq=1
+
+serial, parallel, CMS, G1GC, ZGC
+
+Default garbage collectors:
+    Java 7 - Parallel GC
+    Java 8 - Parallel GC
+    Java 9 - 15 - G1 GC
+
+
+    https://stackoverflow.com/questions/33206313/default-garbage-collector-for-java-8
+    https://backstage.forgerock.com/knowledge/kb/article/a75965340
+    Parallel is also known as Throughput collector
+    JEP 248: Make G1 the Default Garbage Collector
+        http://openjdk.java.net/jeps/248
+    https://docs.oracle.com/en/java/javase/11/gctuning/z-garbage-collector1.html#GUID-A5A42691-095E-47BA-B6DC-FB4E5FAA43D0
+
+
+jagged arrays
+
+
