@@ -144,3 +144,12 @@ Before JDK 7, the pool was part of permgen space, and from JDK 7 to now, it is p
 Thread is a worker, Runnable is the Job
 Thread class itself implements Runnable
 Once the thread is started, it can’t be started again.
+
+Rob Pike
+    https://rakhim.org/summary-of-concurrency-is-not-parallellism-a-talk-by-rob-pike/
+    Parallelism is *doing* lot of things at once
+    Concurrency is about *dealing* with a lot of things at once.
+
+    The ideas are, obviously, related, but one is inherently associated with structure, the other is associated with execution.
+    Concurrency is structuring things in a way that might allow parallelism to actually execute them simultaneously.
+    But parallelism is not the goal of concurrency. The goal of concurrency is good structure.
