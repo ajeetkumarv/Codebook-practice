@@ -153,3 +153,22 @@ Rob Pike
     The ideas are, obviously, related, but one is inherently associated with structure, the other is associated with execution.
     Concurrency is structuring things in a way that might allow parallelism to actually execute them simultaneously.
     But parallelism is not the goal of concurrency. The goal of concurrency is good structure.
+
+https://www.baeldung.com/java-singleton
+https://www.baeldung.com/java-singleton-double-checked-locking
+    Conceptually, a singleton is a kind of global variable.
+    In general, we know that global variables should be avoided — especially if their states are mutable.
+
+https://wiki.sei.cmu.edu/confluence/display/java/TSM03-J.+Do+not+publish+partially+initialized+objects#:~:text=The%20Java%20memory%20model%20(JMM,publication%20of%20partially%20initialized%20objects.
+https://stackoverflow.com/questions/45857765/partial-constructed-objects-in-the-java-memory-model
+https://wiki.sei.cmu.edu/confluence/display/java/OBJ11-J.+Be+wary+of+letting+constructors+throw+exceptions
+
+
+Since Java 16 it is possible
+Regular Inner class can't have static declarations for members
+Technically there I don't know of any reason why the language restricts the use of static elements for inner classes.
+A nonstatic inner class can be emulated by using a normal class that takes the (formerly) enclosing instance as an
+argument to the constructor. Of course there are many little differences when it comes to visibility rules an visibility scopes.
+
+I presume it was a language design decision, mostly because statics in non-static inner classes
+are confusing and non-intuitive to access (Outer.Inner.StaticMember).

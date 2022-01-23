@@ -1,0 +1,26 @@
+https://wiki.sei.cmu.edu/confluence/display/java/TSM03-J.+Do+not+publish+partially+initialized+objects#:~:text=The%20Java%20memory%20model%20(JMM,publication%20of%20partially%20initialized%20objects.
+https://stackoverflow.com/questions/45857765/partial-constructed-objects-in-the-java-memory-model
+https://wiki.sei.cmu.edu/confluence/display/java/OBJ11-J.+Be+wary+of+letting+constructors+throw+exceptions
+
+Excellent video
+https://www.youtube.com/watch?v=-7ZB-jpaPPo&list=WL&index=6
+Interrupts are cooprative mechanism for indicating stop signal to a thread.
+
+
+Why Interrupt is a request and not a force
+    if thread stops abruptly it may leave things in inconsistent state
+        Open connects that needs closure
+        Open files needs to be closed
+        Half operations, flags written somewhere
+
+Runnable.run doesn't throw and exception
+Callable throws exception
+
+
+isInterrupted() => check the flag
+interrupted() => check the flag and reset it
+
+https://stackoverflow.com/questions/16504140/thread-stop-deprecated
+    ThreadDeathException
+
+

@@ -6,3 +6,27 @@ Covariance and Contravariance
 
 What is compact and profile in java
 
+https://github.com/eugenp/tutorials/tree/master/patterns/design-patterns-creational
+
+Inner class/nested examples:
+    ThreadLocal
+        ThreadLocalMap
+            there is something
+
+https://www.baeldung.com/java-interface-vs-abstract-class
+    abstract can have method impl on stages we supply
+    interfaces have default methods but not for states we instanciate with
+
+    abstract class examples
+        GenericServlets -> HttpServlet
+
+    interface example
+        Comparable
+        Serializable
+        Externalizable
+        Clonable
+        AutoClosable
+
+        RandomAccess
+
+        Collections framework
