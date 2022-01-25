@@ -1,5 +1,7 @@
 package code.example;
 
+import java.util.Map;
+
 class A {
     int method() { return 0;}
 }

@@ -1,4 +1,4 @@
-package code.arraybased;
+package code.problems;
 
 import java.util.*;
 import java.util.stream.Collectors;

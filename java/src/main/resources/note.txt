@@ -121,13 +121,24 @@ Invoke Dynamics (Since 7)
 
 https://stackoverflow.com/questions/586363/why-is-super-super-method-not-allowed-in-java?rq=1
 
-serial, parallel, CMS, G1GC, ZGC
+    serial,
+        Stop the world, single thread to GC
+    parallel, default in <= Java 8 also known as throughput collector
+        Stop the world, parallel threads to GC
+    CMS, removed in 14.
+        It's designed to eliminate the long pause associated with the full gc of parallel & serial collector.
+        It use 1 or more gc threads to scan the old generation periodically, and discard unused objects,
+        the pause is very short, but use more cpu time.
+    G1GC,
+        It's low pause / server style gc, mainly for large heap (> 4Gb).
+        divides old gen into parts, clean old gen by copy from 1 part to another. thus less fragmented
+    ZGC
 
 Default garbage collectors:
     Java 7 - Parallel GC
     Java 8 - Parallel GC
     Java 9 - 15 - G1 GC
-
+    -XX:+UseG1GC or -XX:+UseConcMarkSweepGC.
 
     https://stackoverflow.com/questions/33206313/default-garbage-collector-for-java-8
     https://backstage.forgerock.com/knowledge/kb/article/a75965340
@@ -136,6 +147,8 @@ Default garbage collectors:
         http://openjdk.java.net/jeps/248
     https://docs.oracle.com/en/java/javase/11/gctuning/z-garbage-collector1.html#GUID-A5A42691-095E-47BA-B6DC-FB4E5FAA43D0
 
+    https://www.baeldung.com/jvm-epsilon-gc-garbage-collector
+    Epsilon GC or No-Op GC
 
 jagged arrays
 
@@ -172,3 +185,5 @@ argument to the constructor. Of course there are many little differences when it
 
 I presume it was a language design decision, mostly because statics in non-static inner classes
 are confusing and non-intuitive to access (Outer.Inner.StaticMember).
+
+

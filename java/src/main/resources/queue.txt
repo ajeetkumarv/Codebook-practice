@@ -1,0 +1,20 @@
+
+BlockingQueue interface
+    ArrayBlockingQueue
+    LinkedBlockingQueue
+
+    methods
+        put blocks thread if space not avaiable
+        add throws IllegalStateException if no space
+        offer returns if was enqueued or not true or false
+        offer within time limit
+
+        take
+        poll return null if not found
+        poll with time
+        remove removes the first element matches in the queue
+
+        drainTo to put elements into collection
+
+        peek just see the element don't remove
+        element see, but no such element exception if doens't existis

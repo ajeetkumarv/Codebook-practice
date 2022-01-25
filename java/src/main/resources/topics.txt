@@ -8,6 +8,15 @@ What is compact and profile in java
 
 https://github.com/eugenp/tutorials/tree/master/patterns/design-patterns-creational
 
+Collections.unmodifiableList
+Collections.unmodifiableMap
+
+Java 9 onwards it's not 1.9, it's just java 9
+With Java 9 that distinction was basically gone, and you are always downloading a JDK.
+The directory structure of JDKs also changed, with not having an explicit JRE folder anymore.
+
+https://www.marcobehler.com/guides/a-guide-to-java-versions-and-features
+
 Inner class/nested examples:
     ThreadLocal
         ThreadLocalMap

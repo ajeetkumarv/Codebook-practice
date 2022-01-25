@@ -1,0 +1,27 @@
+Round 1
+    JAVA
+    Very basic java Questions
+        abstrac vs interface
+        new things in interface in java 8
+
+        PROBLEM STATEMENT
+            1) find max duplicated String in list
+            2) filter and sort emp on firstname then lastname
+
+    Very basic SQL question
+        when to use left join
+        primary key and unique contraint index
+    didn't know REST, microservices, noSQL, web hence didn't ask
+
+Round 2
+    Problem stmt
+        String commpression aaaabbbccaeeee to a4b3c2ae4 notice it not a1 it's just a
+
+    how to microservices communicate
+    what is a microservice is not responding
+    hwo they exchange data in realtime
+    what data struct to use if huge amount of data
+    how pagination works
+        how do you cache it, something on cursor
+        will query execute again and again
+    query is slow, what do you do

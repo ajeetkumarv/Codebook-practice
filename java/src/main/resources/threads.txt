@@ -23,4 +23,6 @@ interrupted() => check the flag and reset it
 https://stackoverflow.com/questions/16504140/thread-stop-deprecated
     ThreadDeathException
 
+Spurious wakeup and Lock.newCondition()
+    https://www.youtube.com/watch?v=N0mMm5PF5Ow
 

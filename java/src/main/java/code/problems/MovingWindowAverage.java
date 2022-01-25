@@ -1,4 +1,4 @@
-package code.arraybased;
+package code.problems;
 
 import java.util.LinkedList;
 import java.util.Queue;
