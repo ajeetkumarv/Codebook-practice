@@ -133,6 +133,7 @@ https://stackoverflow.com/questions/586363/why-is-super-super-method-not-allowed
         It's low pause / server style gc, mainly for large heap (> 4Gb).
         divides old gen into parts, clean old gen by copy from 1 part to another. thus less fragmented
     ZGC
+    Shenandoah
 
 Default garbage collectors:
     Java 7 - Parallel GC
@@ -149,6 +150,24 @@ Default garbage collectors:
 
     https://www.baeldung.com/jvm-epsilon-gc-garbage-collector
     Epsilon GC or No-Op GC
+    Algos
+            Mark copy
+            Mark Sweep
+
+    Throuput
+        avg time spent running code and running GC
+        so 99% throuput means GC running 1% of time
+
+    Generational Hypothesis
+        Young Generation
+        Old Generation
+            Mark-Sweep-Compaction
+    https://www.youtube.com/watch?v=2AZ0KKeXJSo Defog
+    Ranjith ramachandran
+    https://www.youtube.com/watch?v=UnaNQgzw4zY
+        when -XX:MaxTenuringThreshold is reachied (i think 16) then objects are moved to old gen
+    Minor run of GC in on Young Gen only
+    Major run of GC goes through all spaces
 
 jagged arrays
 
@@ -186,4 +205,45 @@ argument to the constructor. Of course there are many little differences when it
 I presume it was a language design decision, mostly because statics in non-static inner classes
 are confusing and non-intuitive to access (Outer.Inner.StaticMember).
 
+Spliterator
+  // Obtain a Spliterator.
+  Spliterator<String> splitItr = myStream.spliterator();
+  // Iterate the elements of the stream.
+  while(splitItr.tryAdvance((n) -> System.out.println(n)));
+  splitItr.forEachRemaining(n -> sout);
+
+  Spliterator<String> splitItr = myStream.spliterator();
+      // Now, split the first iterator.
+      Spliterator<String> splitItr2 = splitItr.trySplit();
+       // If splitItr could be split, use splitItr2 first.
+      if(splitItr2 != null) {
+        System.out.println("Output from splitItr2: ");
+        splitItr2.forEachRemaining((n) -> System.out.println(n));
+      }
+      // Now, use the splitItr.
+      System.out.println("\nOutput from splitItr: ");
+      splitItr.forEachRemaining((n) -> System.out.println(n));
+
+SynchronousQueue
+    Direct Handoff or Size of 1(not really)
+    No peek method
+    no Iterate
+    only for handoffs
+
+    It requires consumer thread to be ready so that it can handoff directly
+
+Collectors
+    .toList
+    .toMap
+    .toSet
+    .toUnmodifiableList
+    .toUnmodifiableSet
+    .toUnmodifiableMap
+    .toConcurrentList
+    .toConcurrentMap
+
+Check Teeing in collectors this came with Java 12
+if means collector, collector, combineThoseCollectors
+
+https://www.baeldung.com/java-8-collectors
 

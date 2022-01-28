@@ -39,3 +39,5 @@ https://www.baeldung.com/java-interface-vs-abstract-class
         RandomAccess
 
         Collections framework
+
+Exception signatures in Hierarchy

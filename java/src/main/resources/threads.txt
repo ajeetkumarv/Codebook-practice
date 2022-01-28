@@ -26,3 +26,35 @@ https://stackoverflow.com/questions/16504140/thread-stop-deprecated
 Spurious wakeup and Lock.newCondition()
     https://www.youtube.com/watch?v=N0mMm5PF5Ow
 
+In general, a stream can be switched between parallel and sequential on an as-needed basis. There is one other aspect of
+ a stream to keep in mind when using parallel execution:
+ the order of the elements. Streams can be either ordered or unordered. In general, if the data source is ordered, then
+ the stream will also be ordered. However, when using a parallel stream, a performance boost can sometimes be obtained by
+ allowing a stream to be unordered. When a parallel stream is unordered, each partition of the stream can be operated on
+ independently, without having to coordinate with the others.
+In cases in which the order of the operations does not matter, it is possible to specify unordered behavior by calling
+the unordered( ) method, shown here: S unordered( ) (there is no ordered method)
+
+    sequential()
+
+One other point: the forEach( ) method may not preserve the ordering of a parallel stream. If you want to perform
+an operation on each element in a parallel stream while preserving the order, consider using forEachOrdered( ).
+It is used just like forEach( ).
+
+
+Ideal thread count = Num of Cores X [1 + (wait time / CPU time)]
+    so for cpu bound tasks wait time becomes 0, so num of cores is idea size
+    for IO bound tasks there is some wait time, it becomes [ > 1], thats why we see NumOfCore + 1 as pool size
+
+AOT vs JIT
+    Ahead Of Time Vs Just In Time
+    C1 and C2 Compiler
+        C2 does heavy optimizations but resource hungry, suitable for long running tasks
+        +XX:ReserverCodeCacheSize = 240MB in java 8
+    In java 7 we have options to choose C1 and C2
+    In java 8 we have both C1 and C2 as default
+
+    AOT comilation in java 9
+    jaotc --output libHelloWorld.so HelloWorld.class
+    Add this compiled code while starting your application
+    java --XX:AOTLibrary=./libHelloWorld.so HelloWorld
