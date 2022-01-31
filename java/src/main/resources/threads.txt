@@ -58,3 +58,10 @@ AOT vs JIT
     jaotc --output libHelloWorld.so HelloWorld.class
     Add this compiled code while starting your application
     java --XX:AOTLibrary=./libHelloWorld.so HelloWorld
+
+How to take thread dump
+    jstack <pid> > ./out.txt
+    kill -3 <pid>
+    or run a java provided mechanism in the background
+        ThreadMXBean bean = ManagementFactory.getThreadMXBean()
+        bean.findDeadlockedThreads()
