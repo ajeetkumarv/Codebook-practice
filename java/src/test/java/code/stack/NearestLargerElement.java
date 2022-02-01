@@ -15,7 +15,7 @@ public class NearestLargerElement {
     /** O(n^2)
      */
     @Test
-    public void bruteForce() {
+    public void nearestGreaterToRightBruteForce() {
 
         List<Integer> result = Lists.newArrayList();
 
@@ -37,7 +37,7 @@ public class NearestLargerElement {
     }
 
     @Test
-    public void usingStack() {
+    public void nearestGreaterToRightUsingStack() {
         Stack<Integer> stack = new Stack<>();
         List<Integer> result = new ArrayList<>();
 
@@ -62,6 +62,34 @@ public class NearestLargerElement {
         }
 
         Collections.reverse(result);
+
+        System.out.println(Arrays.toString(data));
+        System.out.println(result);
+    }
+
+    @Test
+    public void nearestGreaterToLeftUsingStack() {
+        Stack<Integer> stack = new Stack<>();
+        List<Integer> result = new ArrayList<>();
+        //[1, 3, 0, 0, 2, 4]
+        for (int i = 0; i < data.length; i++) {
+            if (stack.isEmpty()) {
+                result.add(-1);
+            } else if (data[i] < stack.peek()) {
+                result.add(stack.peek());
+            } else {
+                while (!stack.empty() && data[i] >= stack.peek() ) {
+                    stack.pop();
+                }
+
+                if (stack.empty())
+                    result.add(-1);
+                else
+                    result.add(stack.peek());
+            }
+
+            stack.push(data[i]);
+        }
 
         System.out.println(Arrays.toString(data));
         System.out.println(result);
