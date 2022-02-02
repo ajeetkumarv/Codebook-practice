@@ -41,3 +41,5 @@ https://www.baeldung.com/java-interface-vs-abstract-class
         Collections framework
 
 Exception signatures in Hierarchy
+
+Jenny video tuts on array stack on youtube
