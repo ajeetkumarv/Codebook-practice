@@ -1,5 +1,7 @@
 package code.problems.histomaxarea;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.stream.IntStream;
 
 /**
@@ -7,7 +9,9 @@ import java.util.stream.IntStream;
  */
 public class HistogramMaxArea {
 
-    Integer[] data;
+    private Integer[] data;
+
+    private Map<Integer, Integer> valueRightIndex = new HashMap<>();
 
     public HistogramMaxArea(Integer[] data) {
         this.data = data;
@@ -17,6 +21,29 @@ public class HistogramMaxArea {
         Integer max = -1;
 
         for (int i=0;i< data.length;i++) {
+            Integer maxWidthUnits = findWidthUnitsForIndex(i);
+            Integer area = maxWidthUnits * data[i];
+
+            if (max < area) {
+                max = area;
+            }
+        }
+
+        return max;
+    }
+
+    public Integer getMaxAreaReuse() {
+
+        Integer max = -1;
+
+        for (int i=0;i< data.length;i++) {
+
+            Integer previousRightIndex = valueRightIndex.getOrDefault(data[i], -1);
+            if (previousRightIndex != -1 && previousRightIndex >= i) {
+                System.out.println("Skipping processing for index " + i + " number: " + data[i]);
+                continue;
+            }
+
             Integer maxWidthUnits = findWidthUnitsForIndex(i);
             Integer area = maxWidthUnits * data[i];
 
@@ -40,7 +67,9 @@ public class HistogramMaxArea {
     private Integer findWidthUnitsForIndex(Integer index) {
         Integer indexForSmallerLeft = findIndexForSmallerLeft(index);
         Integer indexForSmallerRight = findIndexForSmallerRight(index);
-        System.out.println("Left " + indexForSmallerLeft + " Right " + indexForSmallerRight + " For index " + index);
+
+        valueRightIndex.put(data[index], indexForSmallerRight);
+
         return indexForSmallerRight - indexForSmallerLeft -1;
     }
 
