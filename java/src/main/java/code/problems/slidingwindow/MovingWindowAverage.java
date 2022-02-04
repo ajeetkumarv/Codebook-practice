@@ -1,4 +1,4 @@
-package code.problems;
+package code.problems.slidingwindow;
 
 import java.util.LinkedList;
 import java.util.Queue;
