@@ -1,2 +1,14 @@
 After NGL, NGR, think of Farthest GL and FGR
 
+What is amortized complexity.
+
+https://stackoverflow.com/questions/8499227/minimum-value-of-maximum-values-in-sub-segments-in-on-complexity
+
+https://stackoverflow.com/questions/200384/constant-amortized-time#:~:text=This%20means%20that%20in%20the,)%20is%20O(1)%20.
+Just a note in terms of notation: An amortized constant execution time of O(n) is often written as O(n)+, as opposed to just O(n).
+The addition of the plus sign indicates that that execution time is not guaranteed to be O(n) and can actually exceed that execution time
+
+https://mortoray.com/2014/08/11/what-is-amortized-time/
+
+https://github.com/sadanandpai/dsa-interview-challenges/blob/main/problems/DSA_challenges.pdf
+

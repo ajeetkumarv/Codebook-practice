@@ -3,7 +3,7 @@ package code.problems.slidingwindow;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class MovingWindowAverage {
+public class SlidingWindowAverage {
 
     static int windowSize = 4;
     static float sum = 0f;
