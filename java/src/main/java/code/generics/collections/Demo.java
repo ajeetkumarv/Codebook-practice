@@ -11,7 +11,7 @@ public class Demo {
 
     public static void main(String[] args) {
         List<Dog> dogs = new ArrayList<>();
-        //List<Animal> animals = dogs; // not allowed
+        //List<Animal> animals = dogs;
     }
 
 }

@@ -1,4 +1,4 @@
-package code.telldontask;
+package code.patterns.telldontask;
 
 class AskRemoteService {
     boolean isOperationAvaliable() {return true;}
