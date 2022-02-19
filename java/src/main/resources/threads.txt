@@ -65,3 +65,10 @@ How to take thread dump
     or run a java provided mechanism in the background
         ThreadMXBean bean = ManagementFactory.getThreadMXBean()
         bean.findDeadlockedThreads()
+
+Thread Safety Strategies
+	Confinement
+	Synchronization
+	Partitioning
+	Immutability
+	Atomic Objects
