@@ -7,6 +7,7 @@ package code.patterns;
  * or static factories would have more than a handful of parameters.
  *
  * Telescoping Constructor Pattern
+ * the builder pattern will help you to consume additional attributes while retaining the immutability
  *
  */
 class Pizza {
