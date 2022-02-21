@@ -7,6 +7,7 @@ Covariance and Contravariance
 What is compact and profile in java
 
 https://github.com/eugenp/tutorials/tree/master/patterns/design-patterns-creational
+https://www.baeldung.com/tag/pattern/
 
 Collections.unmodifiableList
 Collections.unmodifiableMap
