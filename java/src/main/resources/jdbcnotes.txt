@@ -6,3 +6,10 @@ Different JDBC Driver
         Highest Performance driver
         Provided by vendor itself
         Extremely Flexible
+
+Port Numbers
+    Oracle: 1521
+    PostGres: 5432
+    Mssql Server: 1433
+    MySql: 3306
+
