@@ -13,3 +13,16 @@ Port Numbers
     Mssql Server: 1433
     MySql: 3306
 
+ACID
+    Atomicity
+        either complete fully or not at all.
+    Consistency
+        Strong Consistency
+            after the transaction is committed or rolled back, all the future transactions will see the effect of the transaction.
+        Eventual Consistency
+            in this model, reads might return a view of the system that is stale for some period but eventually will
+            be reflect latest changes.
+    Isolation
+        runs parallel or serial, completely unaware of others
+    Durability
+        Any commited transaction is written to non-volatile storage. it will not be undone by a crash, powerloss, network issues.
