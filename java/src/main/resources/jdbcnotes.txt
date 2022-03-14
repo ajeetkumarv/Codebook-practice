@@ -12,7 +12,7 @@ Port Numbers
     PostGres: 5432
     Mssql Server: 1433
     MySql: 3306
-
+    REDIS: 6379
 ACID
     Atomicity
         either complete fully or not at all.
