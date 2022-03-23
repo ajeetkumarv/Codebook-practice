@@ -1,0 +1,10 @@
+https://www.bmc.com/blogs/cap-theorem/#:~:text=The%20CAP%20theorem%20is%20a,or%20availability%E2%80%94but%20not%20both.
+
+When a network failure happens, one can choose to guarantee consistency or availability:
+
+High consistency comes at the cost of lower availability.
+High availability comes at the cost of lower consistency.
+
+Consistency in CAP is different than that of ACID. Consistency in CAP means having the most up-to-date information.
+
+(ACID refers to a different database event. In ACID, consistency means any new transaction to the database won’t corrupt the database.)
