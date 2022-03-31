@@ -1,0 +1,18 @@
+31 Mar, 2022
+Technical
+    1) Set - uniqueness, maintain order, sorted (TreeSet)
+    2) Architecture of current project
+    3) How do they invoke each other
+    4) Where kafka stores messages (Disk) and check algos
+    5) intercept messages using listener/filter
+    6) Oauth, or what do you use for Authorisation and Authentication, Header token
+    7) Any Queue system or NoSQL idea?
+    8) Redis how to persist, data types
+
+Manager
+    1) What is Agile, What are Ceremonies
+    2) Overlapping hours
+    3) Overseas customers
+    4) Next 3 years plan
+    5) Learning Technologies
+    6) Challenging situation

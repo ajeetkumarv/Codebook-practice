@@ -247,3 +247,17 @@ if means collector, collector, combineThoseCollectors
 
 https://www.baeldung.com/java-8-collectors
 
+
+https://www.falkhausen.de/Java-10/java.util/Exceptions.html
+https://rollbar.com/blog/java-exceptions-hierarchy-explained/
+
+ZipError indicates a low-level JVM error and, although you may catch it just like any other exception,
+there is a chance that the whole JVM is at that moment in such a state that it shouldn't continue to run.
+Note that there is a separate ZipException for more regular sort of errors, like corrupt files, I/O errors etc.
+
+Error
+    ServiceConfigurationError (1.6)
+    VirtualMachineError (CitiusTech - when SQLServer was taking 97% and error was Unable to create Java Virtual Machine)
+        UnknownError
+        InternalError
+            ZipError (1.6)
