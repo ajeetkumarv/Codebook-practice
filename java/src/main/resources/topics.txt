@@ -44,3 +44,12 @@ https://www.baeldung.com/java-interface-vs-abstract-class
 Exception signatures in Hierarchy
 
 Jenny video tuts on array stack on youtube
+
+Bloom filter
+    is a space-efficient probabilistic data structure that is used to test whether an element is a member of a set.
+    https://www.geeksforgeeks.org/difference-between-bloom-filters-and-hashtable/
+
+The purpose of Address Resolution Protocol (ARP) is to find out the MAC address of a device in your Local Area Network, for the corresponding IPv4 address
+
+
+

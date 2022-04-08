@@ -1,16 +1,33 @@
 31 Mar, 2022
 Technical
-    1) Set - uniqueness, maintain order, sorted (TreeSet)
+    1) Set - uniqueness, maintain order, sorted (TreeSet) and Hashmap works
     2) Architecture of current project
     3) How do they invoke each other
+        Synchronous and Async. sync can be using Rest
+        RestTemplate, or queue, or kafka
     4) Where kafka stores messages (Disk) and check algos
     5) intercept messages using listener/filter
-    6) Oauth, or what do you use for Authorisation and Authentication, Header token
+    6) Oauth (app to app), or what do you use for Authorisation and Authentication, Header token
+        Oauth
+        LDAP
+        JWT
+        Spring Security - is lib to use above tools
     7) Any Queue system or NoSQL idea?
     8) Redis how to persist, data types
+    7) Put vs POST
+        employee/1234
+    8) PathVariable vs RequestParam
+    9) Circuit Braker
+        https://www.youtube.com/watch?v=ADHcBxEXvFA
+            To allow, partially allow or disallow requests
+            open, half open , closed
+            Library: Resiliece4j from netflix
+            Resilience4j is a lightweight, easy-to-use fault tolerance library inspired by
+            Netflix Hystrix,
 
 Manager
     1) What is Agile, What are Ceremonies
+        Agile Scrum framework utilizes five key ceremonies: the Sprint, Sprint Planning, Daily Scrum, Sprint Review and Sprint Retrospective.
     2) Overlapping hours
     3) Overseas customers
     4) Next 3 years plan
