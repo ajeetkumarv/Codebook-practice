@@ -2,6 +2,9 @@ package code.algods.arrays;
 
 import java.util.*;
 
+/**
+ * find if array has pair that add to targetSum
+ */
 public class TargetSum {
 
     public static void main(String[] args) {
