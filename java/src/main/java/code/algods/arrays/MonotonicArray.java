@@ -16,11 +16,14 @@ public class MonotonicArray {
         if (array.length <= 2) return true;
 
         for (int i = 1; i< array.length ;i++) {
-            if (array[i] > array[i-1])
+            /*if (array[i] > array[i-1])
                 decreaseMaintained = false;
 
             if (array[i] < array[i-1])
-                increaseMaintained = false;
+                increaseMaintained = false;*/
+
+            decreaseMaintained = decreaseMaintained && array[i] <= array[i-1];
+            increaseMaintained = increaseMaintained && array[i] >= array[i-1];
         }
 
         return increaseMaintained || decreaseMaintained;
