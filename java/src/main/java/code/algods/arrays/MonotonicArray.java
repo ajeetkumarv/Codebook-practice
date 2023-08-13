@@ -3,8 +3,27 @@ package code.algods.arrays;
 public class MonotonicArray {
     public static void main(String[] args) {
         boolean monotonic = isMonotonic(new int[]{-1, -5, -10, -1100, -1100, -1101, -1102, -9001});
-
         System.out.println(monotonic);
+
+        boolean monotonic2 = isMonotonic2(new int[]{1, 5, 10, 1100, 1100, 1101, 1102, 9001});
+        System.out.println(monotonic2);
+    }
+
+    private static boolean isMonotonic2(int[] array) {
+        boolean increaseMaintained = true;
+        boolean decreaseMaintained = true;
+
+        if (array.length <= 2) return true;
+
+        for (int i = 1; i< array.length ;i++) {
+            if (array[i] > array[i-1])
+                decreaseMaintained = false;
+
+            if (array[i] < array[i-1])
+                increaseMaintained = false;
+        }
+
+        return increaseMaintained || decreaseMaintained;
     }
 
     private static boolean isMonotonic(int[] array) {
