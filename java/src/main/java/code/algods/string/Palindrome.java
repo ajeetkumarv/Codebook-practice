@@ -26,6 +26,6 @@ public class Palindrome {
 
     private static boolean isPalindrome(String str, int i) {
         int j = str.length() - 1 -i;
-        return i >=j ? true : str.charAt(i) == str.charAt(j) && isPalindrome(str, i + 1);
+        return i >= j || str.charAt(i) == str.charAt(j) && isPalindrome(str, i + 1);
     }
 }
