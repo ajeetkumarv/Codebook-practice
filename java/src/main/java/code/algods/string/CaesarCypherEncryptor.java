@@ -1,4 +1,4 @@
-package code.problems;
+package code.algods.string;
 
 public class CaesarCypherEncryptor {
 
