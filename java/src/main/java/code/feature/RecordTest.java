@@ -2,7 +2,9 @@ package code.feature;
 
 public class RecordTest {
     public static void main(String[] args) {
-        record Employee(String id, double salary, int yearsOfService) {
+
+        // records are meant to be immutable
+        record Employee(String id, double salary, int yearsOfService) { // imlicitly final
             public static String data = "data"; // no instance member allowed
             void test() {
                 System.out.println("Test: " + data);
@@ -18,7 +20,7 @@ public class RecordTest {
         emp2.data = "updated data";
         emp.test();
         emp.setData("restored data");
-        System.out.println(emp.id());
+        System.out.println(emp.id() + " " + emp.id);
         System.out.println(emp); // toString
         System.out.println(Employee.data);
     }
