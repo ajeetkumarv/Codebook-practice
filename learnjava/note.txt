@@ -1,0 +1,133 @@
+ Short, Self Contained, Correct (Compilable), Example (also known as an SSCCE).
+Mutable states problems
+    Error prone
+    hard to reason
+    hard to make concurrent
+Higher Order Function means
+we can pass Function to Function
+we can create Function within Function
+we can return Function from Function
+
+Functions have to be pure, they don't have side effects
+1. does not change anything
+2. does not depend of anything that changes
+
+Imperative vs Declarative
+how             what
+Mutate          transform
+side-effects    pure
+pass objects    pass Function also
+hard to compose Functional composition
+
+java -p => module path
+java -f output/second.jar -d => will tell you the name
+
+Everything in the class path goes for Unnamed module
+Automatic module is old jar coming to life in module path
+Explicitly named module are new stuff in the module path.- has module descriptor
+
+if function is pure, compiler can use referencial transparancy ie. if a and b are final then usage of a + b can be
+replaced by their values added, so runs faster
+
+Builder pattern is also known as Train reck pattern or cascade pattern
+
+
+there 5 types of lambda
+static Integer::parseInt
+bound the one capturing state eg. Instance.now()::isAfter
+unbound String::toLowerCase
+class constructor LinkedList::new
+Array constructor int[]:: new
+
+there are 43 standard function Interfaces
+6 are basic.
+
+
+parallelization is optimization, treat it like any other optimization
+
+we don't come up with new things, we just come up with new names of same things and get very excited about it.
+You can not learn an idiom by learning dictionary
+idioms have a history, they have a story, and usage
+Eg. rains cats and dogs
+
+Concise
+Highly Expressive
+
+
+The Illitrates of the 21st centuary will not be those who can not read and write
+but those who can not learn, unlearn and relearn = Alwin Toffler
+
+i want to work in a company which creates environment which allows me to say I don't know
+in a team that makes absolutely safe to be honest, for me to say i want to learn
+
+Environment Shapes Behaviour
+
+
+There are risks and costs to a program of action, but they are far less than the long-range risks and costs of
+comfortable inaction - jFK
+
+Design is good if its easier to change
+
+YAGNI - You are not gonna Need it
+    postpone things until they are really really needed
+
+Cohesive code is narrow, focused, and does only one thing, hence changes less frequently
+    Like things together, unlike things separate
+
+Liskov's Substitution Principle
+    use it only if there is substitutability
+    Inheritance demands more from developers than Composition
+
+Interface Segregation Principle
+Clock implements TimeTeller, Alarm, Radio
+
+so user one uses TimeTeller interface is only concerned about time details not Alarm or Radio
+
+we are keeping interfaces separate for time, alarm, and radio
+
+Functionl Programming = function composition and Lazy evaluation
+
+Collectors mutablility is Local not shared hence safe
+
+There is no point in optimizing the code for writing (or performance)
+wen real cost is in reading
+Mutability needs company, it often hangs around with bugs
+
+
+These things add complexity: https://www.youtube.com/watch?v=nZcLHkORdHE&list=WL&index=17
+    Too many moving parts
+    Invisible changes
+    uncontrolled Mutability
+    lack of cohesion
+    excessive dependencies
+    technology infatuation
+    low level concurrency
+    imperative style
+    entwinement: mixing two orthogonal stuff and putting them together
+        Example: Manage external resources more deterministically,hence should not depend on finalize for external resource cleanup
+        external resrouce cleanup is different than memory cleanup
+
+a maintainable code is the gift we give to our future self
+
+
+Java 8 sorting in streams
+    based on firstName and secondName;
+
+List<String> Max duplicates
+    Highest Duplication
+
+Normal Spring common question Singleton ko proto ke ander dala and reverse kiya to
+Spring scopes
+
+synchronized hashmap
+
+DB
+student and course table
+    course 1 to 1 hai to foreign
+
+Product id name type
+Prodct type  ptId, ptName
+metadata order id pid order date
+
+
+

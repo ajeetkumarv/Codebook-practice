@@ -1,0 +1,42 @@
+Priceline
+    Round 1
+        1) Problem stmt: find pair that adds upto target number
+        2) find even odd without using % operator. sol flip isEven = !isEven or use bitwise operators
+        3) How to break singleton using reflection and prevent that (Constructor check). How to prevent from serialization (readResolve())
+        4) Serializatio nsv Externalization
+    Round 2
+        1) Promblem stmt: find max profit from array with stock values
+        2) is try possible without catch and finally, why do you need finally if try with resource
+        3) how to wire dev uat and prod env in spring interface environment
+        4) synchronisedMap vs ConcurrentHashMap
+Nomura
+  1) collections.synchronizedMap vs ConcurrenHashmap
+  2) Class vs Enum
+  3) Reenterant Lock vs Synchronized
+  4) String Pool why?
+  5) object points to each other, which all will be garbage collected
+  5) Builder Pattern, Singleton
+  6) String Buffer vs StringBuilder
+
+  HR Round
+    Fact based question, like when did you start, at what sal you left citius, why you left
+    at what pkg you joined msci, when was last appraisal, what was bonus amnt, why leaveing
+    what is curr/expected
+    family members, location
+    Nothing tricky in this round, she ended in 15 mins
+
+  Olivier - London
+    1) Garbage collection types
+    2) SOLID and Interface segregation example
+    3) Abstract Factory Design pattern
+    4) how to improve if multiple threads are reading and writing from same DB
+        Answer partitioning
+    6) Have u used any queueing system, what is their usefullness
+    7) Project Tech stack, he asked me what is the use of that technology in project
+    8) How do you test your code/coverage/what is sonar
+    9) What is lambda
+    
+    
+  Ashish and Meghna
+    1) Identity and WeakMap
+    2) Intersection of hashmap
