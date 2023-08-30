@@ -1,0 +1,337 @@
+Mercurial is one alternative of Git
+commands are like hg, doesn't have staging area
+
+
+Git Lens is most popular VS Code gui
+Source Tree is best free for win and mac
+
+git --version
+
+3 Levels
+System, for all users
+Global all repos of curr user
+Local, the current repositoty
+
+-------------------CONFIGURATIONS -------------------
+
+git config --global user.name "ajet"
+git config --global user.email "emial id"
+
+git config --global code.editor "code --wait"
+git config --global -e
+
+#for mac/linux
+git config --global core.autocrlf input
+#for win
+git config --global core.autocrlf true
+
+git config --global diff.tool vscode
+    vscode is just a name of tool here
+
+git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+
+git config --global -e
+    edit configs stored in .gitconfig
+
+git difftool
+    wd vs staged
+git difftool --staged
+
+git ls-files
+    show files
+git ls-files -c
+    only cached(staged) files
+
+git ls-tree
+git show
+
+
+
+------------------- COMMANDS -------------------
+
+git status -s
+
+git commit -am "Direct commit"
+    auto stage and commit only for modified files
+
+git rm file.js
+    remove file/dir and stage
+
+git rm --cached file.js // for files
+git rm --cached -r bin/ // for dir
+    remove only from stage
+
+git mv file1.js file2.js
+    move or rename + auto stage
+
+git log --oneline
+git log --revese -5
+
+git show 5887eT2
+
+git restore file
+    copy from stage to wd
+    actually it takes from the last env to this env
+
+git restore --staged gile
+    copy from repo to stage
+
+git clean -fd
+    remvoe all untracked files
+
+when you commit, stage and repo becomes same, stage is not cleared
+log is file, log/ is dir
+github.com/github/gitignore
+    template for diff prog lang
+
+git rm -h
+    -h is quick help
+
+git blame file
+    get line number with who has commited
+
+------------------- BRANCHING -----------
+
+git switch bugfix
+    switch to bugfix
+
+git branch -m bugfix bugfix/signup-form
+    rename is happening here
+
+git branch -d bugfix
+git branch -D bugfix
+    force delete
+
+git log master..bugfix
+    show all commits that are not in master
+
+git diff bugfix
+    diff between curr branch and bugfix
+
+git diff --name-status bugfix
+    lists the files that will be merged
+
+git log --oneline --all --graph
+git log master..feature
+    all commits from master to feature
+    essentially whats not in master
+
+git diff --name-status bugfix
+    lists filenames that were added
+
+git diff bugfix
+    diff between curr branch and bugfix
+
+
+
+--------------- MERGING ---------------
+
+There are two types of MERGING
+    Fast forward and 3-way merging
+
+git log --oneline --all --graph
+
+git merge --no-ff bugfix
+    This will not fast forward
+    will create new merge commit
+
+git config --global ff no
+
+git merge feature/something
+
+git branch --merged
+    show merged branches
+    other option is --no-merged
+
+git merge --abort
+    we are back to clean state before merge started
+
+3 resetting options
+    soft (only repo will be restored)
+    mixed (default) (stage and repo)
+    hard (wd/stage/repo will be identical)
+
+git reset --hard HEAD~1
+
+[won't work incase of merged commit] git revert HEAD
+
+git reset -m 1 HEAD
+    revert changes and back to 1st parent
+
+git merge --squash feature
+    and then make a commit 
+    and delete the branch
+        else it will reflect in --no-merged
+
+git rebase master
+    pull master changes into curr branch and assume it as base
+Rebasing rewrites history
+so if you have shared your branch and if
+someone puts more commit on your branch, it will 
+be a mess for them if you rebase bcz it creates new commits in master.
+
+git rebase --skip
+git rebase --continue
+git rebase --abort
+
+git cherry-pick 5670ecc
+
+git restore --source=feature/something --toc.txt
+    pick a file from some other branch
+git restore --source=HEAD~1 file
+    restore file to prev version
+git checkout 1G578Te file
+    restore to prev version
+
+
+--------------- TAGGING --------------------------
+
+git tag v1.0 5e7802j
+git tag -a v1.1 -m "tagging msg"
+    -a is annotate
+
+
+git checkout v1.0
+
+----------- REMOTE HANDLING -------------
+
+git remote
+git remote -v
+    v for verbose
+
+git fetch or git fetch origin
+    to update our origin/master
+    this will update our origin/master
+    we will have to additional merge master branch to reflect changs in local branch wd
+    git merge origin/master
+
+git branch -vv
+
+git pull = git fetch + merge
+
+git pull is by default 3 way merge
+git pull --rebase
+
+git push origin master or git push
+    if you are on master branch
+
+git push -f
+    this is a terrible thing to do
+    this may override other persons commit
+
+
+Tag by default don't go to remote repo
+git push origin v1.0
+
+git push origin --delete v1.0
+git tag -d v1.0
+    to delete it from local also
+
+git switch -C bugfix
+    create and switch to this local newly created branch
+
+git branch -r
+    all the remote linked branch
+
+git push -u origin feature
+    to link to origin remote
+    -u means set upstream
+
+git push -d origin feature
+    deletes only remote branch, local still remains
+
+origin/<beanch> is called remote tracking branch
+
+so for github
+    if you create new branch on web
+    do git fetch to get the remote tracking branch on local machine
+    then run below command to create a local branch and link with remote
+    git switch -C feature origin/feature
+
+git remote prune origin
+    delets branches that are not in remote
+
+Adding new remote name
+git remote add upstream <url.git>
+git remote rename upstream base
+    just in case to rename
+
+git remote rm upstream
+
+---------------- REWIRING HISTORY ------------- 
+never alter public commites
+you many need to change because of below reasons
+    very large commit
+    very tiny commit
+    missed something in commit
+
+also
+    there may be unrelated commites
+    tiny change like typo or simple forgottn small letter change
+    confusing comments
+
+******* undoing commit *****
+
+git revert HEAD
+    if you have pushed your code
+    this will revert the changes by that code
+    will create a new commit
+
+Assuming we have pushed our changes
+
+git revert HEAD~3..HEAD
+or
+git revert HEAD~3..
+    HEAD~3 is excluding here, so HEAD, HEAD~1 and HEAD~2 will be reverted
+    but will create 3 revert commits here
+git revert HEAD~2
+    this only removes HEAD~2 not after or before commits
+
+How to revert multiple commites with single revert commit
+
+git revert --no-commit HEAD~3
+    revert but don't create commit
+
+git revert --abort
+    if want to abort
+git revert --continue
+now push this commit.
+
+--------- RECOVER LOST COMMIT -----------
+
+git reflog
+    to see history
+
+git reset --hard HEAD!{1}
+    to reset head back to life
+
+---------- AMEND -----------------
+
+git commit --amend -m "New commit message"
+
+Ammending earlier commit
+git rebase -i 4f78eE5
+    -i is interactive
+
+Reword/Reorder/Squash commit message
+git rebase -i 6fb2ba7^
+    use reword for each commit you want to reword
+    but this will recreate commits all after the oldest commit reworded
+
+we can use fixup in place of squash
+
+--------------- ^ Caret ---------
+                     master  
+  ... <- B <- C <- D
+             /
+... <- E <- F
+              feature
+
+When feature was merged into master, C was created with two ancestors. Git assigns these ancestors numbers. The mainline ancestor B is assigned 1 and the feature ancestor F is assigned 2.
+
+Thus C^1 refers to B and C^2 refers to F. C^ is an alias for C^1.
+
+You would only ever use <rev>^3. if you had performed a merge of three branches.
+
+HEAD^ refers to the parent of the current HEAD commmit. (also, HEAD^^ refers to the grandparent).
+

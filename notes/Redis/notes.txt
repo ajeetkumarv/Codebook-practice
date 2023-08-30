@@ -1,0 +1,153 @@
+defaults write com.apple.finder AppleShowAllFiles YES
+
+default port 6379
+ping
+
+echo 'Hey world'
+
+First commands
+set name  value1
+get name
+
+
+Data types
+Key
+Set
+Sorted Set
+Hashes
+list
+string
+
+Two persistence options
+    AOF: Append on File: logs every operation in a system file to rebuild data if restarted.
+	file can grow big quickly but redis smartly using latest dataset shrinks the file size
+    RDB: Redis Database (Default): takes snapshot periodically, based on time or number of items.
+
+find snapping section in redis.conf
+there will be some configurations like below
+save 100 500
+
+
+this means till 100 seconds if 500 records are affected, it will make a snapshot
+
+AOF is find below be default its no
+appenonly no
+
+to start with configuration file
+redis-server redis.conf
+
+if you are using appendonly yes then it will createe appendonly.aof file at server start
+
+you can copy redis.conf to redis2.conf to create different configuration and ports setting to 
+use it as a replication server
+change the port
+then find slaveof <masterip> <masterport>
+
+Redis persistence
+You can learn how Redis persistence works on this page, however what is important to understand for a quick start is that by default, if you start Redis with the default configuration, Redis will spontaneously save the dataset only from time to time (for instance after at least five minutes if you have at least 100 changes in your data), so if you want your database to persist and be reloaded after a restart make sure to call the SAVE command manually every time you want to force a data set snapshot. Otherwise make sure to shutdown the database using the SHUTDOWN command:
+
+$ redis-cli shutdown
+This way Redis will make sure to save the data on disk before quitting. Reading the persistence page is strongly suggested in order to better understand how Redis persistence works.
+
+changes while server is on 
+CONFIG SET SAVE "60 1"
+
+above config is already in config.conf file, but for this server start 60 1 will be used. once server restarts config value will be used
+
+find below parameter in redis.conf to password protect
+requirepass
+
+now to enable slave to be able to connect to master use below
+masterauth <yourpass>
+
+now to connect with password protected server user below
+redis-cli -a <yourpass>
+
+--------------
+
+set addr 500
+get addr
+incr addr
+incrBy addr 100
+
+same for decr and decrBy
+
+getset firstName Amol
+above command means get the existing value first and then set firstName to Amol
+
+mset and mget
+mset country India city mumbai state MH
+
+so 
+mget state country
+will return 
+MH 
+India
+
+exists country
+return 1 as true
+
+we can remove using below command
+del country
+
+expire zip 5
+
+zip will be expired in 5 seconds
+or
+set zip 5 ex 10
+zip wil expire in 10 seconds
+
+-----------------
+hmset userinfo1 name ajeet age 32 height 5.6
+
+hgetall userinfo1
+name
+ajeet
+age
+32
+height
+5.6
+
+hget userinfo1 age
+32
+
+hmget userinfo1 name height
+ajeet
+5.6
+
+hexists userinfo1 name
+1
+
+lpush and r push are for lists
+
+rpush fruits apple mango grapes
+rpush fruits pine // will append
+lpush fruits pear // will prepend
+
+lrange fruits 0 -1 // shows all reecords
+
+lpop fruits // remove 1 element from beginning
+rpop fruits // from end
+
+ltrim fruits 0 4 // means upto index 4
+
+zadd rocker 1998 apollo 2008 liner // this is sorted set with info
+
+flushall
+
+TTL Foo
+will give time left to expire foo value
+
+persist greet
+will persist and wil not expire if set to expire
+
+append key1 " world"
+
+we can rename the key1
+rename key1 newkey1
+
+linsert people before "Brad" "newname"
+
+
+Redis is SingleThreaded
+

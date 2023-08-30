@@ -1,0 +1,144 @@
+https://www.freecodecamp.org/news/the-linux-commands-handbook/
+
+sort -nru
+	n is numners
+	R is reversed
+	U is unique
+	
+cat -n
+	cat with numbers
+	
+wc -l filename
+	this shows filename also
+filename | wc -l
+wc -l < filename
+	to avoid printing filename
+	
+uniq -d
+	show only duplicates
+	without -d only adjasent dups are removed
+uniq -u
+	for unique values
+	
+	
+	~
+$PATH
+	$USER
+	$SHELL
+		are called expansions
+		
+	echo *.??
+		match filename that has 2 char extension
+	
+This reads 2 nums and does sum, sub, mul, div
+$(()) is performing math ops
+$() will assume the stuff as command
+read x
+read y
+echo $((x+y))
+echo $((x-y))
+echo $((x*y))
+echo $((x/y))
+
+
+touch {a, b, c}.txt
+	will create 3 files a.txt, b.txt, c.txt
+
+touch day_{1..99}.txt
+
+find . -name '*.js'
+	find in curr dir recursively inside all dirs also by name *.js
+find . -type d
+	find only dirs
+find . -type f
+	find only files
+find . -type d -name '*E*'
+find . -type d -iname '*E*'
+	-i means case insensitive
+find . -name 'E*' -or -name 'F*'
+
+find . -type f -size +100k -size -1M
+
+grep
+	GlobalRegularExpressionPrint
+	
+grep green SongsOfColor.txt
+	search for green in the file
+	prints each line with green find
+grep -n green SongsOfColor.txt
+	print the line numbers also
+grep -nC 2 green SongsOfColor.txt
+	C is context
+	2 is 2 lines before the match, and 2 lines after the match
+grep -r 'Chicken' .
+	search recursively for Chicken in curr dir and others inside
+
+du -h | sort -h
+	this will sort by filesize asc
+df -h
+	for disk space consumption
+	
+
+read mathexp
+val=$(echo $mathexp | bc -lq)
+printf '%.3f' $val
+
+
+run history command
+	!2064
+		run command in history with this number
+
+ps
+	process status
+	
+kill -l
+	to list the signals we can send
+	
+jobs
+	to list jobs in background
+ctrl+z
+	will pause the job and put in thebackgroup
+	
+fg 2 will bring the job no 2 to foreground
+
+xargs
+	find . -size +1M | xargs ls -l
+	so all files > 1M becomes arg for ls -l
+	
+su
+	substitute user
+	
+sudo
+	superuser do
+
+
+
+chmod
+	u user
+	g group
+	o others
+	a all of above
+	
+	- 
+	+ add permission
+	= set this and remove others
+	
+	
+	chmod o-rwx
+		remoev rwx from others
+	chmod a=r
+		set read of all types of users and remove wx
+		
+Octal Binary Filemode
+0
+000
+---
+1
+001
+--x
+2
+010
+-w-
+.
+.
+7
