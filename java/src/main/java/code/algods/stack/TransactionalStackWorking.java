@@ -1,4 +1,4 @@
-package code.algods;
+package code.algods.stack;
 
 import java.util.Stack;
 
