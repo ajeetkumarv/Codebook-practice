@@ -1,0 +1,13 @@
+Type script is superset of JS
+any valid JS code is also a typescript code
+
+Browser don't understand TS so we transpile to JS
+TypeScript code is transpiled to JS code
+
+TypeScript offer strong typing, OOP, compile time error checking.
+TS compiler shows errors but still generates valid JS code.
+npm install -g typescript
+version i installed is 5.2.2
+tsc --version
+
+each file is a module
