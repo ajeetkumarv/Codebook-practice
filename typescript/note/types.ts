@@ -5,6 +5,9 @@ let d: any
 let e: number[] = [1,2,3]
 let f: any[] = [1, true, 'a'];
 
+// we have Null, Undefined, Void, Any, Tuples
+let aAnyType: any;
+
 const ColorRed = 0;
 const ColorBlue = 1;
 

@@ -1,5 +1,15 @@
+https://www.youtube.com/watch?v=30LWjhZzg50&t=2133s
+
+tsc --init // creates a simple tsconfig.ts
+npm init -y // -y to be yes to everthing and just create
+
 Type script is superset of JS
 any valid JS code is also a typescript code
+
+Typescript is all about type safety.
+Typescript is a development tool, actual project runs on JS
+
+typescriptlang.org/play
 
 Browser don't understand TS so we transpile to JS
 TypeScript code is transpiled to JS code
