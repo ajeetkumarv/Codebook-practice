@@ -1,4 +1,4 @@
-package code.algods.arrays;
+package algo.array;
 
 public class TransposeMatrix {
     public static void main(String[] args) {

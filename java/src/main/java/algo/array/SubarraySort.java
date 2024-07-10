@@ -31,10 +31,10 @@ public class SubarraySort {
 		int minIndex = 0;
 		int maxIndex = array.length - 1;
 
-		while (minOutOfOrder > array[minIndex])
+		while (minOutOfOrder >= array[minIndex])
 			minIndex++;
 
-		while(maxOutOfOrder < array[maxIndex])
+		while(maxOutOfOrder <= array[maxIndex])
 			maxIndex--;
 
 		return new int[] {minIndex, maxIndex};
