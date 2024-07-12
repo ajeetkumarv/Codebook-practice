@@ -1,5 +1,10 @@
 package code.feature;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class RecordTest {
     public static void main(String[] args) {
 
@@ -23,5 +28,14 @@ public class RecordTest {
         System.out.println(emp.id() + " " + emp.id);
         System.out.println(emp); // toString
         System.out.println(Employee.data);
+
+        record Sample (int a, int b){
+            public int sum() {
+                return a + b;
+            }
+        };
+
+        Sample s = new Sample(5,6);
+        System.out.println(s.sum());
     }
 }

@@ -1,4 +1,4 @@
-package code.algods.arrays;
+package algo.array;
 
 import java.util.Arrays;
 import java.util.function.Supplier;
