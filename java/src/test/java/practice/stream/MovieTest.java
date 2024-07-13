@@ -1,12 +1,15 @@
 package practice.stream;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class MovieTest {
 
 	private List<Movie> movies = new ArrayList<>();
@@ -24,7 +27,9 @@ class MovieTest {
 	}
 
 	@Test
-	public void testAnyMatch() {}
+	public void testAnyMatch() {
+
+	}
 
 	@Test
 	public void testNoneMatch() {}
@@ -103,5 +108,13 @@ class MovieTest {
 				List.of("Samantha"),
 				List.of("Telugu", "Tamil", "Malayalam"),
 				Duration.ofMinutes(150));
+
+		movies.add(movie1);
+		movies.add(movie2);
+		movies.add(movie3);
+		movies.add(movie4);
+		movies.add(movie5);
+		movies.add(movie6);
+		movies.add(movie7);
 	}
 }
