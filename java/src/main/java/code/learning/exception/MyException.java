@@ -5,7 +5,7 @@ package code.learning.exception;
  * https://stackoverflow.com/questions/501277/why-doesnt-java-allow-generic-subclasses-of-throwable
  *
  *
- * because runtime info is erased, how will it decine on which catch block to go
+ * because runtime info is erased, how will it decide on which catch block to go
  *
  * @param <T>
  */
