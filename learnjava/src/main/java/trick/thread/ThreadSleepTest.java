@@ -13,7 +13,7 @@ public class ThreadSleepTest {
             while(!done) {
                 count ++;
                 //Just remove this sleep and it won't terminate
-                //try { Thread.sleep(0);}  catch (Exception e) {}
+                //try { Thread.sleep(0);}  catch (Exception e) {}s
                 //adding volatile also fixes the problem
             }
 
@@ -24,6 +24,6 @@ public class ThreadSleepTest {
 
         Thread.sleep(2000);
         done = true;
-        System.out.println("Existing main");
+        System.out.println("Exiting main");
     }
 }

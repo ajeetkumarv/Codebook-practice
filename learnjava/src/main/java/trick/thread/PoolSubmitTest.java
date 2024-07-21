@@ -23,7 +23,7 @@ public class PoolSubmitTest {
                 Since the class name is Thread, you don't have currentThread() method
                 so it was a miss from me :(
                  */
-                //System.out.println("TEst" + Thread.currentThread());
+                //System.out.println("Test" + Thread.currentThread());
             } catch(Exception e) {
                 e.printStackTrace();
             }

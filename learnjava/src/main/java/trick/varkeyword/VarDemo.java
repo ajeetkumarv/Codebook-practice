@@ -1,6 +1,7 @@
 package trick.varkeyword;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
@@ -34,7 +35,7 @@ public class VarDemo {
 
         Consumer<Integer> l1 = (var x) -> System.out.println("Can not be infered" + x);
 
-        //but it can not mixed with expliciyt or implicit declaration like below
+        //but it can not mixed with explicit or implicit declaration like below
         //BiConsumer<Integer, String> l2 = (var x, y) -> System.out.println("");
         //BiConsumer<Integer, String> l2 = (var x, String y) -> System.out.println("");
 
@@ -42,7 +43,7 @@ public class VarDemo {
         //this ArrayList<Object> not List<Object>
         var list = new ArrayList<>();
 
-        // this is infered to ArrayList<Integer>
+        // this is inferred to ArrayList<Integer>
         var list2 = new ArrayList<>(Set.of(1));
     }
 }
