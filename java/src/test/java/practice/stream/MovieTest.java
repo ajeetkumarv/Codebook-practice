@@ -7,6 +7,7 @@ import org.junit.jupiter.api.TestInstance;
 
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -71,6 +72,19 @@ class MovieTest {
 
 	@Test
 	public void testGenreAndCommaSeparatedTitles() {
+	}
+
+	@Test
+	public void testSortOnTwoFields() {
+		Comparator<Movie> likeComparator1 = (m1, m2) -> m1.getLikes() < m2.getLikes() ? -1 : 1;
+		Comparator<Movie> likeComparator = Comparator.comparing(Movie::getLikes).reversed();
+		Comparator<Movie> durationComparator = Comparator.comparing(Movie::getDuration);
+		List<String> movies = this.movies.stream()
+				.sorted(likeComparator.thenComparing(durationComparator))
+				.map(m -> m.getLikes() + " " + m.getDuration())
+				.toList();
+
+		System.out.println(movies);
 	}
 
 	private void populateMovies() {
