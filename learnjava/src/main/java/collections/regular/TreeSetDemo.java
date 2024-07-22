@@ -1,10 +1,24 @@
 package collections.regular;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class TreeMapIfNoCompareToDemo {
+@Data
+@AllArgsConstructor
+class Fruit implements Comparable<Fruit> {
+    private int weight;
+
+    @Override
+    public int compareTo(Fruit o) {
+        return this.weight < o.weight ? -1 : 1;
+    }
+}
+
+public class TreeSetDemo {
     public static void main(String[] args) {
 
         /*
@@ -15,8 +29,9 @@ public class TreeMapIfNoCompareToDemo {
         /*
         Comparable on Fruit on Comparator in TreeSet required
          */
-        Comparator<Fruit> fCompare;
-        Set<Fruit> fruits = new TreeSet<>();
+        Comparator<Fruit> fCompare = Comparator.comparing(Fruit::getWeight);
+        Set<Fruit> fruits = new TreeSet<>(); // either Fruit should be Comparable or we supply a Comparator
+        fruits.add(new Fruit(10));
         fruits.add(new Fruit(5));
         fruits.add(new Fruit(4));
         fruits.add(new Fruit(9));

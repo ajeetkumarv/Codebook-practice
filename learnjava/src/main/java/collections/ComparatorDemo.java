@@ -1,5 +1,6 @@
 package collections;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,9 +12,9 @@ public class ComparatorDemo {
 
         Optional<Person> oldestPerson = getPeople()
                 .stream()
+                //.max(Comparator.comparing(Person::getAge))
                 .collect(maxBy(comparing(Person::getAge).thenComparing(Person::getName)));
         // if duplicate, first occurred will be considered
-        //
         System.out.println("Oldest: " + oldestPerson.get().getName());
 
 

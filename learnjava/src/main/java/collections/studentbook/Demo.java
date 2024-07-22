@@ -16,7 +16,8 @@ public class Demo {
                         .map(b -> Pair.of(b, s)))
                 .collect(Collectors.groupingBy(
                         Pair::getBook,
-                        Collectors.mapping(p -> p.getStud().getFirstName(), Collectors.toList())));
+                        Collectors.mapping(p -> p.getStud().getFirstName(), Collectors.toList())
+                ));
         System.out.println("All books: " + data);
 
         // Use this instead of Pair
@@ -24,11 +25,14 @@ public class Demo {
 
         Optional<Student> hasMostBooks = createStudents().stream()
                 .collect(Collectors.maxBy(Comparator.comparing(s -> s.getBooks().size())));
+
+        Optional<Student> hasMostBooks1 = createStudents().stream()
+                .max(Comparator.comparing(s -> s.getBooks().size()));
         System.out.println("Has max book: " + hasMostBooks.get().getFirstName());
 
         System.out.println("-------------------------");
         List<List<Book>> booksInGroups = studs.stream().map(Student::getBooks).collect(Collectors.toList());
-        List<Book> allBooksMerged = studs.stream().flatMap(s -> s.getBooks().stream()).collect(Collectors.toList());
+        List<Book> allBooksMerged = studs.stream().flatMap(s -> s.getBooks().stream()).toList();
     }
 
     private static List<Student> createStudents() {

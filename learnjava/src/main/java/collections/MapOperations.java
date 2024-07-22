@@ -1,5 +1,6 @@
 package collections;
 
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -22,12 +23,10 @@ public class MapOperations {
                 .stream()
                 //.collect(Collectors.toMap(Person::getName, p -> p, (p1,p2) -> p1.getAge() < p2.getAge() ? p1 : p2));
                 .collect(Collectors.toMap(Person::getName, p -> p, MapOperations::getYounger));
+                //.collect(Collectors.toMap(Person::getName, p -> p)); // if there is no dupicate name
                 //.collect(Collectors.toUnmodifiableMap(Person::getName, p -> p, MapOperations::getYounger));
 
-        /*
-            This will generate error if using toUnmodifiableMap
-         */
-        //map2.put("N",new Person("H", 1));
+        //map2.put("N",new Person("H", 1)); This will generate error if using toUnmodifiableMap
 
         String csvNames = getPeople()
                 .stream()

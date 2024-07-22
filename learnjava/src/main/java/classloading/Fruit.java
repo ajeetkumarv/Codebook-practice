@@ -2,7 +2,7 @@ package classloading;
 
 public class Fruit {
     static  {
-        System.out.println("Fruit:: static block");
+        System.out.println("Fruit:: first static block");
     }
 
     {
@@ -12,6 +12,10 @@ public class Fruit {
     static
     {
         System.out.println("Fruit:: second static block");
+    }
+
+    public Fruit() {
+        System.out.println("Fruit:: constructor");
     }
 
 

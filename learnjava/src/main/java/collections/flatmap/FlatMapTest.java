@@ -3,6 +3,8 @@ package collections.flatmap;
 import collections.Person;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -13,36 +15,41 @@ public class FlatMapTest {
     public static void main(String[] args) {
         List<Integer> nums = List.of(1,2,3);
 
-        List<List<Integer>> numsNested = nums.stream().map(e -> List.of(e-1, e+1)).collect(Collectors.toList());
+        List<List<Integer>> numsNested = nums.stream().map(e -> List.of(e-1, e+1)).toList();
         System.out.println("One to Many data: " + numsNested);
 
-        List<Integer> flattned = nums.stream().flatMap(e -> List.of(e-1, e+1).stream()).collect(Collectors.toList());
-        System.out.println("Flattened: " + flattned);
+        List<Integer> flattened = nums.stream().flatMap(e -> List.of(e-1, e+1).stream()).toList();
+        System.out.println("Flattened: " + flattened);
 
-        getPeople().stream()
+        Map<Integer, Set<String>> collect = getPeople().stream()
                 .collect(
-                        Collectors.groupingBy(
+                        groupingBy(
                                 Person::getAge,
-                                mapping(p -> p.getName().toUpperCase(),
-                                        flatMapping(name -> Stream.of(name.split("")), toSet())
+                                mapping(
+                                        p -> p.getName().toUpperCase(),
+                                        flatMapping(
+                                                name -> Stream.of(name.split("")),
+                                                toSet()
+                                        )
                                 )
                         )
                 );
+        System.out.println("output: " + collect);
     }
 
     private static List<Person> getPeople() {
         List<Person> people = List.of(
-                new Person("A", 1),
-                new Person("B", 2),
-                new Person("C", 5),
-                new Person("D", 6),
-                new Person("E", 8),
-                new Person("F", 11),
-                new Person("G", 12),
-                new Person("H", 12),
-                new Person("I", 15),
-                new Person("J", 15),
-                new Person("J", 25)
+                new Person("Anna", 1),
+                new Person("Bon", 2),
+                new Person("Cute", 5),
+                new Person("Din", 6),
+                new Person("Elle", 8),
+                new Person("Fox", 11),
+                new Person("Gough", 12),
+                new Person("Hart", 12),
+                new Person("Ini", 15),
+                new Person("Jem", 15),
+                new Person("Jok", 25)
         );
         return people;
     }

@@ -5,10 +5,11 @@ public class Demo {
         Apple apple = new Apple();
         /*
             OUTPUT
-            Fruit:: static block
+            Fruit:: first static block
             Fruit:: second static block
             Apple:: static block
             Fruit:: instance block
+            Fruit:: constructor
             Apple:: instance block
             Apple::Constructor
 

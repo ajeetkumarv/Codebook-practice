@@ -15,7 +15,7 @@ public class RemoveAnomalyDemo {
         Integer three = Integer.valueOf(3);
         int primitiveThree = 3;
 
-        data.remove(three);//removes the element 3 not at index 3
+        data.remove(three);//removes the element 3, not at index 3
         System.out.println("Integer list data: " + data);
 
         data.remove(primitiveThree);//removes the index 3
