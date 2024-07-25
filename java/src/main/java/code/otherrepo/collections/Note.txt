@@ -1,0 +1,11 @@
+Collectors
+    .toList     .toUnmodifiableList     .toConcurrentList
+    .toMap      .toUnmodifiableMap      .toConcurrentMap
+    .toSet      .toUnmodifiableSet
+
+
+Check Teeing in collectors this came with Java 12
+if means collector, collector, combineThoseCollectors
+
+https://www.baeldung.com/java-8-collectors
+

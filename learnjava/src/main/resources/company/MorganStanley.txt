@@ -1,8 +1,0 @@
-2021
-    14Mar21 HackerRank test
-    Problem
-        given n, start and end point, find count of moves to reach end pont for horse in chess
-
-    1st round vdo call
-        1) synchronized collection vs ConcurrentHashMap
-        2)
