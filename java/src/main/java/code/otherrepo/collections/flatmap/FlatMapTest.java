@@ -1,6 +1,6 @@
 package code.otherrepo.collections.flatmap;
 
-import collections.Person;
+import lombok.Value;
 
 import java.util.List;
 import java.util.Map;
@@ -12,6 +12,12 @@ import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.mapping;
 import static java.util.stream.Collectors.toSet;
 
+@Value
+class Person {
+    String name;
+    Integer age;
+}
+
 public class FlatMapTest {
     public static void main(String[] args) {
         List<Integer> nums = List.of(1,2,3);
@@ -19,7 +25,7 @@ public class FlatMapTest {
         List<List<Integer>> numsNested = nums.stream().map(e -> List.of(e-1, e+1)).toList();
         System.out.println("One to Many data: " + numsNested);
 
-        List<Integer> flattened = nums.stream().flatMap(e -> List.of(e-1, e+1).stream()).toList();
+        List<Integer> flattened = nums.stream().flatMap(e -> Stream.of(e-1, e+1)).toList();
         System.out.println("Flattened: " + flattened);
 
         Map<Integer, Set<String>> collect = getPeople().stream()

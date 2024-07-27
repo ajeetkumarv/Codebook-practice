@@ -1,4 +1,4 @@
-package code.algods.arrays;
+package algo.array;
 
 public class ReverseWordsInSentense {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package code.algods.linkedlist;
+package algo.linkedlist;
 
 public class RemoveDuplicate {
 

@@ -1,6 +1,7 @@
-package code.algods.string;
+package algo.string;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -13,9 +14,9 @@ public class OneEditMatchWords {
 
         System.out.println(oneEditPossibleToMatch("hello", "olleg"));
         System.out.println(oneEditPossibleToMatch("hello", "hollo"));
-        //System.out.println(oneEditPossibleToMatch("hello", "hllo"));
-        //System.out.println(oneEditPossibleToMatch("bb", "a"));
-        //System.out.println(oneEditPossibleToMatch("hello", "heloos"));
+        System.out.println(oneEditPossibleToMatch("hello", "hllo"));
+        System.out.println(oneEditPossibleToMatch("bb", "a"));
+        System.out.println(oneEditPossibleToMatch("hello", "heloos"));
         System.out.println(oneEditPossibleToMatch("hello", "ellos"));
     }
 
@@ -27,23 +28,15 @@ public class OneEditMatchWords {
             return false;
         }
 
-        if (sizeDiff <= 1) {
-            List<Character> oneChars = stringOne.codePoints().mapToObj(c -> (char) c).collect(Collectors.toList());
-            List<Character> twoChars = stringTwo.codePoints().mapToObj(c -> (char) c).collect(Collectors.toList());
+        List<Character> oneChars = stringOne.codePoints().mapToObj(c -> (char) c).collect(Collectors.toList());
+        List<Character> twoChars = stringTwo.codePoints().mapToObj(c -> (char) c).collect(Collectors.toList());
 
-            List<Character> oneCharBkp = new ArrayList<>(oneChars);
+        List<Character> oneCharBkp = new ArrayList<>(oneChars);
 
-            if (Math.abs(oneChars.size() -  twoChars.size()) > 1) {
-                return false;
-            }
+        remove(oneChars, twoChars);
+        remove(twoChars, oneCharBkp);
 
-            remove(oneChars, twoChars);
-            remove(twoChars, oneCharBkp);
-
-            return expectedSizes.contains(oneChars.size()) && expectedSizes.contains(twoChars.size());
-        }
-
-        return false;
+        return expectedSizes.contains(oneChars.size()) && expectedSizes.contains(twoChars.size());
     }
 
     private static void remove(List<Character> removeFromIt, List<Character> removeThese) {

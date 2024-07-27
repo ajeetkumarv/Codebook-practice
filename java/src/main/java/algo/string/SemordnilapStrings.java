@@ -1,4 +1,4 @@
-package code.algods.string;
+package algo.string;
 
 import java.util.Arrays;
 import java.util.HashSet;

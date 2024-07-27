@@ -1,4 +1,4 @@
-package code.algods.string;
+package algo.string;
 
 public class RunLengthCompression {
 

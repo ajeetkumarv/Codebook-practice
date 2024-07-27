@@ -1,4 +1,4 @@
-package code.algods.stack;
+package algo.stack;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -22,6 +22,8 @@ public class ShortenedPath {
         List<String> tokens = Arrays.stream(tokenArr)
                 .filter(t -> !t.equals(".") && !t.equals(""))
                 .toList();
+
+        System.out.println("Tokens: " + tokens);
 
         Stack<String> stack = new Stack<>();
 
