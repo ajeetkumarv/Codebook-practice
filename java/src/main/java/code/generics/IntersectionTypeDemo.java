@@ -34,7 +34,7 @@ class Banana implements Fruit {
 public class IntersectionTypeDemo {
     public static void main(String[] args) {
         test(List.of(new Cucumber()));
-        //test(List.of(new Banana())); // thisdoesn't work
+        //test(List.of(new Banana())); // this doesn't work
     }
 
     /**

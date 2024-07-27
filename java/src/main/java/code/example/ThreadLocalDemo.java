@@ -19,7 +19,7 @@ class B extends A {
 public class ThreadLocalDemo {
 
     public static void main(String[] args) {
-        // can we create collection of Threadocal class
+        // can we create collection of ThreadLocal class
         //There is something called InheritableThreadLocal
 
         ThreadLocal<Integer> intLocal = ThreadLocal.withInitial(() -> 0);

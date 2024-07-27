@@ -8,9 +8,9 @@ public class CollectorsTeeing {
         Integer sumOfMinAndMax = Stream.of(1, 2, 3, 4, 5)
                 .collect(
                         Collectors.teeing(
-                                Collectors.minBy(Integer::compareTo),
-                                Collectors.maxBy(Integer::compareTo),
-                                (min, max) -> min.get() + max.get()
+                                Collectors.minBy(Integer::compareTo), //downstream1
+                                Collectors.maxBy(Integer::compareTo), //downstream2
+                                (min, max) -> min.get() + max.get()   // merger BiFunction
                         )
                 );
 

@@ -29,6 +29,8 @@ public class RecordTest {
         System.out.println(emp); // toString
         System.out.println(Employee.data);
 
+        emp.id(); // implicitly created getter
+
         record Sample (int a, int b){
             public int sum() {
                 return a + b;

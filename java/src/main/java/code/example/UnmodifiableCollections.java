@@ -1,30 +1,19 @@
 package code.example;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.ToString;
+import lombok.Value;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+@Data
+@ToString
+@AllArgsConstructor
 class Student {
     private String name;
-
-    public Student(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                '}';
-    }
 }
 
 public class UnmodifiableCollections {
