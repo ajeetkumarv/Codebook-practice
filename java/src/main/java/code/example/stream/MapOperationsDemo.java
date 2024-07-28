@@ -1,39 +1,15 @@
 package code.example.stream;
 
+import lombok.ToString;
+import lombok.Value;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
+@Value
+@ToString
 class Employee {
     private String firstName, lastName;
-
-    public Employee(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
-    }
 }
 
 public class MapOperationsDemo {
@@ -60,6 +36,7 @@ public class MapOperationsDemo {
                 .stream()
                 .collect(Collectors.groupingBy(e -> e, Collectors.counting()))
                 .entrySet()
+                //.stream().max(Map.Entry.comparingByValue())
                 .stream()
                 //.collect(Collectors.maxBy((o1, o2) -> o2.getValue().intValue()));
                 .collect(Collectors.maxBy(Map.Entry.comparingByValue()));

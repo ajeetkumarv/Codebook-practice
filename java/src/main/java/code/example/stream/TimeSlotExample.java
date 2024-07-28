@@ -21,7 +21,7 @@ public class TimeSlotExample {
                 .stream()
                 // this doesn't take every row and apply filter before proceeding
                 // rather it takes an element and walk every operation in stream
-                // this is counter intuitive at first sight
+                // this is counter-intuitive at first sight
                 // so not all elements in collection are filtered, rather it is stopped at
                 // first found of all down-streamed operations
                 .filter(TimeSlot::isAvailable)

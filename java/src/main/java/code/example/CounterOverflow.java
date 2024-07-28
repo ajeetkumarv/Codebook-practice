@@ -1,5 +1,7 @@
 package code.example;
 
+import java.math.BigInteger;
+
 public class CounterOverflow {
 
     private int count;
@@ -16,5 +18,14 @@ public class CounterOverflow {
             throw new IllegalStateException("Max value reached");
 
         return count++;
+    }
+
+
+    // better way
+    private BigInteger counter;
+
+    public int getCounter() {
+        counter.add(BigInteger.ONE);
+        return counter.intValueExact();
     }
 }

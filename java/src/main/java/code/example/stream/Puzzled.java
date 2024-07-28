@@ -11,7 +11,7 @@ public class Puzzled {
         int[] factorWrapper = {2};
 
         // these are only intermediate funtion
-        Stream stream = data.stream()
+        Stream<Integer> stream = data.stream()
                 .peek(n -> System.out.print("Before: " + factorWrapper[0]))
                 .map(n -> n * factorWrapper[0])
                 .peek(n -> System.out.print(" After: " + factorWrapper[0] + " "));

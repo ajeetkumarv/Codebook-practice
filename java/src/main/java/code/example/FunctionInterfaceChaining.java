@@ -6,6 +6,7 @@ import java.util.stream.Stream;
 
 /**
  * followed from https://www.youtube.com/watch?v=e4MT_OguDKg&list=WL&index=16
+ *
  */
 public class FunctionInterfaceChaining {
     public static void main(String[] args) {

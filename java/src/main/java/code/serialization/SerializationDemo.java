@@ -1,4 +1,4 @@
-package code.otherrepo.serialization;
+package code.serialization;
 
 import java.io.FileInputStream;
 import java.io.IOException;

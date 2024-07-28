@@ -1,4 +1,4 @@
-package code.otherrepo.serialization.externalizable;
+package code.serialization.externalizable;
 
 import java.io.Externalizable;
 import java.io.IOException;

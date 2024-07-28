@@ -1,4 +1,4 @@
-package code.otherrepo.serialization;
+package code.serialization;
 
 public class Fruit {
 
