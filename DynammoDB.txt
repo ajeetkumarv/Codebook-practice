@@ -1,0 +1,68 @@
+Key/Value storage
+Charged on Throughput
+First 25GB Free on AWS
+Table > Item > Attribute
+PartitionKey is Hashed to find the partition that is memory address.
+Hot Key means lot of keys are hashing to same partition. like hashCode() in java
+
+
+Benefits of NoSQL
+ Data is store in shape needed
+ No joins = faster fetching
+ No alter table or schema changes needed
+
+MongoDB is DocumentDB. in AWS it's literally called DocumentDB
+Collections > documents > fields
+documents, 16MB each
+MongoDB Atlas has free version, 500MB Free
+MongoDB Atlas is fully managed solution from Mongo.
+
+----------------------
+
+Cost is calculated on RRU: Read Request Units basis.
+
+PartitionKey
+SortKeys
+	Along with the partition key, uniquely identify a row of data.
+	Items physically near one another for increased speed.
+
+PartitionKey = Best
+PartitionKey + SortKeys = Good
+PartitionKey + SortKeys + Filter = Slowest
+	avoid filters if possible or should be small.
+	read cost for each item scanned for filter.
+
+Read consistencies
+	Replicated to 3 AZs
+	
+	Eventual consistency is cheaper than Strong consistency
+
+
+Transactions:
+	Can double the cost
+
+Provisioned
+	Billed by RCUs Read Capacity Units and WCU: Write CU
+	Adv Predicatable Billing and throughput
+	DisAdv: Users may receive a 400 with ProvisionedThroughputExceededException
+
+On-Demand
+	Auto-adjust to needed throuput
+	Adv: Unlimited Capacity
+	Disadv: Potential runaway costs
+	
+DynammoDB Streams (after 2.5 million)
+
+GSI: Global Secondary Index
+
+
+Local Secondary Index
+	once table is created, you can only create GSI
+
+
+Streams
+	Time-ordered sequence of item modifications (Insert, U, D)
+	Stored for 24 hours
+	Cost is associated with data.
+	Records grouped into shards
+	
