@@ -1,1 +1,5 @@
-a
+npm install -g browser-sync
+
+https://html.spec.whatwg.org/multipage/dom.html#kinds-of-content
+
+
