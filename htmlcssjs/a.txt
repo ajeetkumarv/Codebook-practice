@@ -1,5 +1,17 @@
 npm install -g browser-sync
 
 https://html.spec.whatwg.org/multipage/dom.html#kinds-of-content
+caniuse.com to check property browser support
 
+box-sizing: border-box or content-box
+    border-box gurantees that it will be mentioned size including marging padding border.
+    content-box is like size for content. border and padding and margin will add to size.
 
+    it's a css property and not inherited to child
+
+    * {
+        box-sizing: border-box;
+        overflow: auto;
+    }
+
+Older bootstrap depends on Jquery. so put jquery first before bootstap script tag

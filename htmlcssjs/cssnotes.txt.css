@@ -1,0 +1,60 @@
+/*class selector <p class-="blue">...</p>*/
+.blue {
+    color: blue
+}
+
+/*id selector <p id="para1">...</p>*/
+#para1 {
+    color: red
+}
+
+/*element selector <p>...</p>*/
+p {
+    color: green
+}
+
+/*universal selector <p>...</p> everything is purple*/
+* {
+    color: purple
+}
+
+/*descendant selector <div>...</div> */
+div p {
+    color: orange
+}
+
+/*grouping selector <h1>, <h2>, <p>...</p>*/
+/* every h1, h2, and p element is pink */
+h1, h2, .blue {
+    color: pink
+}
+
+/*every p that has clas big */
+p.big {
+    font-size: 20px
+}
+
+/*every p that is direct child of article */
+article > p {
+    color: yellow
+}
+
+/*every p that is any level child of article */
+article p {
+    color: yellow
+}
+
+/* pseduo class selector */
+p:first-child {
+    color: red
+}
+
+/* 4 digit specificity score */
+
+/*
+There are 3 ways to size the font
+px - pixels - absolute values
+%
+em - relative to the font size of the element
+*/
+
